@@ -5,6 +5,7 @@
         let zelleb=(webstuhl.width)/24;
         let schuss = 40;
         let label=30; // offset für Label
+        let level=1;
        
         let schuss_fertig=false;
         let kettfaedeneinlegen_manuell=true;
@@ -52,7 +53,7 @@
               {bezeichnung:"Gewebemuster Putbus 3, 4537 B",Kettfaden:'#561C0E',Schussfaden:'#A78349'}        
         
             ]
-       let select = document.getElementById('Musterlager');
+      /* let select = document.getElementById('Musterlager');
         select.innerHTML = MusterLager.map(function(v){
             return '<option style="background-color:'+v.Kettfaden+'; color:'+v.Schussfaden+';" value="' + v.bezeichnung + '">' + v.bezeichnung + '</option>';
         }).join('');
@@ -61,7 +62,7 @@
             return '<option value="' + v.muster + '">' + v.muster + '</option>';
         }).join('');
 
-
+*/
         let aktiveLochkarte=0;
 
         let accelerationX =0;
@@ -73,10 +74,12 @@
             accY = event.accelerationIncludingGravity.y;   
         }
         
-        ctx.fillStyle = '#ccc';
+        ctx.fillStyle = '#eee';
         ctx.fillRect(0, 0, webstuhl.width, webstuhl.height-label);
-        
+
+        kettfaedeneinlegen(Garn["Kettfaden"]);
         //document.addEventListener('keydown', keyDown);
+        /*
         document.getElementById('start').addEventListener('click',function(){kettfaedeneinlegen(Garn["Kettfaden"])}, false);
         document.getElementById('schuss_links').addEventListener('click',function(){schuss_links(Garn["Schussfaden"])}, false);
         document.getElementById('schuss_rechts').addEventListener('click',function(){schuss_rechts(Garn["Schussfaden"])}, false);
@@ -85,7 +88,7 @@
         document.getElementById('Musterlager').addEventListener('change',function(){farbwahlMusterLager()}, false);
         document.getElementById('Lochkartenlager').addEventListener('change',function(){tauscheLochkarten()}, false);
         document.getElementById('saveLK').addEventListener('click',function(){speichernLochkarte()}, false);       
-
+*/
 
         function farbwahl(faden){ // aus colorpicker
             const Garnfarbe=document.getElementById('Farbregal'+faden).value;
@@ -103,6 +106,7 @@
             document.getElementById('LagerSchussfaden').style.backgroundColor=Muster.Schussfaden;
             Garn['Schussfaden']=Muster.Schussfaden;
         }
+
         function tauscheLochkarten(){
             const e=document.getElementById('Lochkartenlager');
             const LochkartenWahl=e.options[e.selectedIndex].value;
@@ -129,16 +133,14 @@
                             if ((Math.abs(yy-accY))>2)   schaltery=false;
                         }
                     }
-
                     for(let y=0;y<webstuhl.height-label;y+=zelleh){
-                        
                             ctx.fillStyle = farbe;//hiermal garnfarbe direkt aufrufen zum Erstellen besonderer Muster
                             ctx.fillRect(x,y,zelleb-1,zelleh);
-                        
                     }
            }
            schuss_fertig=true;
-           document.getElementById("versand").style.visibility="visible";
+           //document.getElementById("versand").style.visibility="visible";
+           fertig('Kettfaeden einlegen');
         }
         
 
@@ -169,7 +171,7 @@
         }
         async function schuss_rechts(farbe){
             console.log(schuss_fertig);
-            if (schuss_fertig && schuss>(webstuhl.height-20) ) {schuss_fertig=false; labelAnheften(); versand(); }
+            if (schuss_fertig && schuss>(webstuhl.height-30) ) {schuss_fertig=false; fertig('Schussfaden'); labelAnheften(); versand(); }
             
             if (schuss_fertig && ((schuss/10) % 2===1)){
                 schuss_fertig=false;
@@ -223,10 +225,8 @@
             ctx.fillRect(x+15,y+19,2,2);
             ctx.fillRect(x+17,y+17,2,2);
             ctx.fillRect(x+19,y+15,2,2);
-
-
         }
-//Garn={Schussfaden:'#F19D0E', Kettfaden:'#FDBC22'};
+
 
         //Export? Versand??
         function versand(){
@@ -235,15 +235,15 @@
             leinwand.width = webstuhl.width;
             leinwand.height =webstuhl.height;
             leinwand.src = dataURL;
-
            
             document.getElementById("versand").download = "muster.png";
             document.getElementById("versand").href = dataURL;
             document.getElementById("versandb").style.visibility="visible";
         }
-
+/*
         erstelleNeueLochkarte();
-
+        
+ */
         function erstelleNeueLochkarte(){
             let neueLochkarte=document.getElementById("neueLochkarten");
             let ausgabe="";
@@ -257,8 +257,7 @@
                 });
             }
         }
-        
-        
+       
         
         function speichernLochkarte(){
             let neueLochkarte="";
@@ -293,5 +292,17 @@ console.log();
         function Sleep(milliseconds) {
                 return new Promise(resolve => setTimeout(resolve, milliseconds));
         }
-        
+        function fertig(aktion){
+            if (level===1 && aktion==='Kettfaeden einlegen'){
+                document.getElementById('aktion').innerHTML="Schwenke dein Handy von links nach rechts um die Schussfäden zu verlegen.";
+            }
+            if (level===1 && aktion==='Schussfaden'){
+                 labelAnheften(); 
+                 versand();
+                 document.getElementById('info').style.display = "none";
+                 document.getElementById('level').innerHTML='<h1>Glückwunsch</h1><p>Dein erstes Stoffmuster wurde gewebt!</p>';
+                }
+
+
+        }
  
