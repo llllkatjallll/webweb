@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Schauweberei Braunsdorf">
+    <title>webweb</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link id="stylesheet" href="css/mod.css" rel="stylesheet">
+        <!--    <script type="application/javascript" src="https://app.usercentrics.eu/latest/main.js" id="9Fis-5XC9"></script>
+-->
+      </head>
+  <body style="max-width:600px; margin:auto;"><nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        
+      </ul>
+    </div>
+    <nav aria-label="...">
+        <ul class="pagination pagination-sm">
+            <li class="page-item active" aria-current="page">
+            <span class="page-link">1</span>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+        </ul>
+    </nav>
+
+  </div>
+</nav><header> 
+  
+</header>
+<main>
+<div class="container ">
+   <div class="row ">
+        <div class="col-sm text-center" style="max-width:600px;">
+          <canvas id="webstuhl" width="240" height="290"></canvas>
+
+          <div id="farbwahl" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+            <div class="carousel-inner"> 
+                <div class="carousel-item active">
+                    <h2>Gewebemuster 3034</h2>
+                    <div class="row" style="height:50px; background-image: url(https://sachsen.museum-digital.de/data/sachsen/images/87/21512-t_387/gewebemuster/200w_gewebemuster-21512.jpg)">
+                    </div>
+                    
+                    <div class="row">
+                            <div class="col farbwahl " style="background-color:#FDBC22"><label id="Kettfaden" class=" " title="Kettfaden"><input id="FarbregalKettfaden" type="color" title="Farbwahl für Kettfaden" value="#FDBC22"/>Farbwahl</label></div>
+                            <div class="col farbwahl " style="background-color:#F19D0E"><label id="LagerSchussfaden" class=" " title="Schussfaden"><input id="FarbregalSchussfaden" type="color" title="Farbwahl für Schussfaden" value="#F19D0E"/></label></div>
+                    </div>
+                    
+                </div>
+
+                <div class="carousel-item">
+                <h2>Gewebemuster</h2>
+                <img src="https://sachsen.museum-digital.de/data/sachsen/images/87/19582-t_80/gewebemuster/200w_gewebemuster-19582.jpg"  alt="...">
+                </div>
+                <div class="carousel-item">
+                <h2>Gewebemuster</h2>
+                <img src="https://sachsen.museum-digital.de/data/sachsen/images/87/20400-t_284/damastgewebe/200w_damastgewebe-20400-2.jpg"  alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#farbwahl" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#farbwahl" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+
+        <div id="bindung" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <h2>Leinwandbindung</h2>
+
+                </div>
+
+                <div class="carousel-item">
+                <h2>Panama</h2>
+                </div>
+                <div class="carousel-item">
+                <h2>Panama b</h2>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#bindung" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#bindung" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        </div>
+    
+    <br/>
+    <button class="btn btn-secondary mx-auto" id="versandb" style="visibility: hidden;" ><a id="versand" href=""> Download </a> </button>
+ 
+    </div>   
+
+ </div>
+</div><!-- /.container -->
+    <script src="js/weben.js">  </script>
+ </main>
+
+      
+
+        <footer>
+	     
+		  
+	  </footer>
+    
+	   <!-- Bootstrap core JavaScript -->
+	   <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

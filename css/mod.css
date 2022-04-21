@@ -1,0 +1,197 @@
+body {
+  padding-top: 3.5rem;
+  align-items: center;
+  min-height: 100vh;
+  background-color:#E0DFDD;
+  max-width:600px; 
+  margin:auto;
+ 
+}
+main{
+	align-items: center;
+	justify-content: center;
+}
+a {
+    color:var(--bs-primary);
+    text-decoration: underline;
+}
+
+a#versand {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+h1, h2, h3, h4 {
+	color:#343a40;
+}
+h1{
+	padding-top: 35px;
+}
+.navbar-light .navbar-toggler{
+	color: rgba(20, 36,114, 0.55);
+    border-color: rgba(20, 36,114, 0.1);
+}
+.navbar-light .navbar-toggler-icon {
+ 
+	background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(20,36,114, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.btn{
+	background-color: #EEE;
+	border-radius: 1rem;
+	width: 50%;
+}
+
+
+
+main {
+min-height: 400px;
+
+
+
+
+}
+.btn-dark a {
+	color:#f1f1f1;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.btn-dark{
+	margin-top: 3rem;
+	/* color: coral; */
+}
+
+
+.phone{
+	margin:2rem 2rem 0 2rem;
+	width: 200px;
+}
+.carousel-control-prev, .carousel-control-next {
+    position: absolute;
+    top: 0em;
+    /* bottom: 2.5em; */
+    z-index: 1;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 2.5em;
+    color: #fff;
+    text-align: center;
+    /* opacity: 0.8; */
+    transition: opacity 0.15s ease;
+}
+
+button.carousel-control-next, button.carousel-control-prev {
+	border: none;background-color: transparent;
+}
+
+.carusel button{
+ border: none;
+ background-color: none;
+}
+
+.farbkasten {
+	width: 50px;
+}
+
+#FarbregalSchussfaden, #FarbregalKettfaden{
+	visibility:hidden;
+  }
+.lk_loch{
+	height: 2rem;
+	width: 2rem;
+	background-color:#999;
+	border-radius: 49%;
+	border: solid 1p #eee;
+}
+#neueLochkarten{
+	padding: 2rem;
+	background-color:#999
+}  
+.Garnregal{
+	background-image: url(../images/spule.png);
+	background-color:#FDBC22;
+	height:49px;
+	width:79px;
+	/* margin: 3rem; */
+	}
+
+  /* The Modal (background) */
+  .modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 100; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+  }
+  
+/**/
+  @media screen and (max-width:800px) {
+	.schuss{
+		display:none;
+	}
+  }
+
+  
+  
+  
+  @keyframes zoom {
+	from {transform:scale(0)}
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+	position: absolute;
+	top: 75px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	.schuss_links{
+		display:none;
+	}
+	.modal-content {
+	  width: 100%;
+	}
+  }
+  
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+  }
+
+.icon_als_img{
+ padding-right: 5px ;
+ height: 30px;
+
+}
+
+

@@ -1,0 +1,232 @@
+body {
+  padding-top: 3.5rem;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+}
+a {
+    color:var(--bs-primary);
+    text-decoration: underline;
+}
+
+a#versand {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+h1, h2, h3, h4 {
+	color:var(--bs-primary);
+}
+h1{
+	padding-top: 35px;
+}
+main {
+min-height: 400px;
+
+}
+.btn-dark a {
+	color:#f1f1f1;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.btn-dark{
+	margin-top: 3rem;
+	/* color: coral; */
+}
+
+
+
+.phone{
+	margin:2rem 2rem 0 2rem;
+	width: 200px;
+}
+.spule1{
+	background-color: #FDBC22;
+}
+.spule2{
+	background-color: #F19D0E;
+	/* padding: 3px; */
+}
+.farbkasten {
+	width: 50px;
+
+}
+#FarbregalSchussfaden, #FarbregalKettfaden{
+	visibility:hidden;
+  }
+.lk_loch{
+	height: 2rem;
+	width: 2rem;
+	background-color:#999;
+	border-radius: 49%;
+	border: solid 1p #eee;
+}
+#neueLochkarten{
+	padding: 2rem;
+	background-color:#999
+
+
+}  
+.Garnregal{
+	background-image: url(../images/spule.png);
+	background-color:#FDBC22;
+	height:49px;
+	width:79px;
+	/* margin: 3rem; */
+	}
+
+  /* The Modal (background) */
+  .modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 100; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
+  /* Modal Content (Image) */
+  .modal-content {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+  }
+  
+/**/
+  @media screen and (max-width:800px) {
+	.schuss{
+		display:none;
+	}
+  }
+
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #caption {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	text-align: center;
+	color: #ccc;
+	padding: 10px 0;
+	height: 150px;
+  }
+  
+  /* Add Animation - Zoom in the Modal */
+  .modal-content, #caption {
+	animation-name: zoom;
+	animation-duration: 0.6s;
+  }
+  
+  @keyframes zoom {
+	from {transform:scale(0)}
+	to {transform:scale(1)}
+  }
+  
+  /* The Close Button */
+  .close {
+	position: absolute;
+	top: 75px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #bbb;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  /* 100% Image Width on Smaller Screens */
+  @media only screen and (max-width: 700px){
+	.schuss_links{
+		display:none;
+	}
+	.modal-content {
+	  width: 100%;
+	}
+  }
+  
+.bd-placeholder-img {
+	font-size: 1.125rem;
+	text-anchor: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+  }
+.ohneRand{
+	margin:0;
+	padding: 0;
+	
+}
+.icon_als_img{
+ padding-right: 5px ;
+ height: 30px;
+
+}
+.fotoliste img {
+	max-height: 100px;
+}
+.carousel-item {
+	height: 90vh;
+	min-height: 350px;
+	background: no-repeat center center scroll;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  }
+.carousel-item h2 {
+	color: white;
+  }
+
+
+.carousel-caption{
+  background-color:rgba(225, 238, 113, 0.4);
+  left: 0;
+  font-size: 1.5em;
+  padding: .2em 1em;
+  border-top-right-radius: .5em;
+  border-bottom-right-radius: .5em;    
+  color: white;
+  text-shadow: 2px 2px 1px black;
+  text-shadow: 1px 1px 1px black;    
+}
+.accordion-button:not(.collapsed) {
+    color: #dde2e9;
+    background-color:var(--bs-primary);
+}
+
+.form-control:focus {
+	color: #212529;
+	background-color: #fff;
+	border-color: #90fe86;
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(101, 253, 13, 0.25);
+  }
+  .accordion-button:focus {
+	z-index: 3;
+	border-color: #90fe86;
+	outline: 0;
+	box-shadow: 0 0 0 0.25rem rgba(101, 253, 13, 0.25);
+  }
+  .row > .btn {
+  width: auto;
+  margin-right: 5px;margin-top: 5px;
+  }
+  @media (min-width: 768px) {
+	.bd-placeholder-img-lg {
+	  font-size: 3.5rem;
+	}
+	  .schuss_links{
+		display:none;
+	}
+  }
