@@ -61,6 +61,12 @@ h1{
 	width: 2em;
 	height: 2em;
 }
+.btn-share{
+	color:	rgba(20, 36,114, 0.8);
+	border-radius: 3px;
+	width: 4em;
+	height: 4em;
+}
 #farbwahl{
 	display: none;
 }

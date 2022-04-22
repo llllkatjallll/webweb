@@ -78,6 +78,7 @@
         ctx.fillRect(0, 0, webstuhl.width, webstuhl.height-label);
 
         kettfaedeneinlegen(Garn["Kettfaden"]);
+        document.getElementById('versandb').addEventListener('click',function(){shareCanvas()}, false);
         //document.addEventListener('keydown', keyDown);
         /*
         document.getElementById('start').addEventListener('click',function(){kettfaedeneinlegen(Garn["Kettfaden"])}, false);
@@ -139,7 +140,6 @@
                     }
            }
            schuss_fertig=true;
-           //document.getElementById("versand").style.visibility="visible";
            fertig('Kettfaeden einlegen');
         }
         
@@ -230,16 +230,27 @@
 
         //Export? Versand??
         function versand(){
-            const dataURL = webstuhl.toDataURL();
-            const leinwand = document.createElement("img");
-            leinwand.width = webstuhl.width;
-            leinwand.height =webstuhl.height;
-            leinwand.src = dataURL;
-           
-            document.getElementById("versand").download = "muster.png";
-            document.getElementById("versand").href = dataURL;
             document.getElementById("versandb").style.visibility="visible";
+
         }
+        async function shareCanvas() {
+            const dataUrl = webstuhl.toDataURL();
+            const blob = await (await fetch(dataUrl)).blob();
+            const filesArray = [
+              new File(
+                [blob],
+                'muster.png',
+                {
+                  type: blob.type,
+                  lastModified: new Date().getTime()
+                }
+              )
+            ];
+            const shareData = {
+              files: filesArray,
+            };
+            navigator.share(shareData);
+          }
 /*
         erstelleNeueLochkarte();
         
@@ -294,15 +305,14 @@ console.log();
         }
         function fertig(aktion){
             if (level===1 && aktion==='Kettfaeden einlegen'){
-                document.getElementById('aktion').innerHTML="Schwenke dein Handy von links nach rechts um die Schussfäden zu verlegen.";
-            }
+                document.getElementById('aktion').innerHTML="Schwenke dein Handy von <b>links nach rechts</b> um die Schussfäden zu verlegen.";
+                versand();   }
             if (level===1 && aktion==='Schussfaden'){
-                 labelAnheften(); 
-                 versand();
+                
                  document.getElementById('info').style.display = "none";
                  document.getElementById('level').innerHTML='<h1>Glückwunsch</h1><p>Dein erstes Stoffmuster wurde gewebt!</p>';
+
+                 labelAnheften(); 
                 }
-
-
         }
  

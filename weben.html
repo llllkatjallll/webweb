@@ -45,14 +45,14 @@
         <div class="text-center" >
           <canvas id="webstuhl" width="240" height="290"></canvas>
 
-          <div class="info">
+          <div id="info">
             <button type="button" class="btn btn-info">I</button>
             <div class="row">
               <div class="col col-4">
                 <img src="images/phone.png" alt="smartphone mit runden Pfeilen" />
               </div>
               <div class="col col-8">
-                <p id="aktion" class="mt-3">Schwenke dein Handy von oben nach unten um die Kettfäden einzulegen.</p>
+                <p id="aktion" class="mt-3">Schwenke dein Handy von <b>oben nach unten</b> um die Kettfäden einzulegen.</p>
               </div>
 
             </div>
@@ -119,11 +119,14 @@
         </div>
     
     <br/>
-    <button class="btn btn-secondary mx-auto" id="versandb" style="visibility: hidden;" ><a id="versand" href=""> Download </a> </button>
+    
  
     </div>   
 
  </div>
+ <button class="btn mx-auto btn-share" id="versandb"  ><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+  <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
+</svg></button>
 </div><!-- /.container -->
     <script src="js/weben.js">  </script>
  </main>
