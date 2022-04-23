@@ -169,6 +169,11 @@ button.carousel-control-next, button.carousel-control-prev {
 	max-width: 700px;
   }
   
+  #logo-name{
+	font-family: 'Space Mono', monospace; 
+	text-align: center;
+	font-size: 3.3em;
+  }
 /**/
   @media screen and (max-width:800px) {
 	.schuss{
