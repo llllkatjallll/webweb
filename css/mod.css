@@ -14,13 +14,14 @@
   }
   
   body {
-  padding-top: 3.5rem;
+ padding-top: 1rem;
   align-items: center;
   min-height: 100vh;
   background-color:#E0DFDD;
   max-width:600px; 
   margin:auto;
   font-family: 'Open Sans';
+  height: 100%;
  
 }
 
@@ -41,7 +42,15 @@ h1, h2, h3, h4 {
 	color:#343a40;
 }
 h1{
-	padding-top: 35px;
+	/*padding-top: 35px;*/
+	font-family: 'Space Mono', monospace; 
+	font-size: 1.3em;
+}
+
+h2{
+	/*padding-top: 35px;*/
+	font-family: 'Space Mono', monospace; 
+	font-size: 1em;
 }
 .navbar-light .navbar-toggler{
 	color: rgba(20, 36,114, 0.55);
@@ -259,3 +268,46 @@ button.carousel-control-next, button.carousel-control-prev {
 
 }
 
+/*Katja*/
+
+.title-row{
+	justify-content:flex-start!important;	
+}
+
+#level{
+	
+	
+	text-align: center;
+	
+}
+
+#aktion{
+	text-align: left;
+}
+
+.round-button{
+	width:50px;
+	height: 50px;
+	display: block;
+	margin: auto;
+	position: relative;
+	top:-20px;
+}
+
+#message{
+	position: fixed;
+	padding: 30px 30px 10px 30px;
+	height: 40vh;
+	width: 100vw;
+	background: rgb(229, 231, 232);
+z-index: 300;
+transition: all 0.4s ease-in-out;
+}
+
+.hide-message{
+	bottom: -40vh;
+}
+
+.show-message{
+	bottom: 0;
+}

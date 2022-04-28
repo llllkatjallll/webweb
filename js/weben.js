@@ -6,6 +6,8 @@
         let schuss = 40;
         let label=30; // offset für Label
         let level=1;
+
+        let message = document.getElementById('message');
        
         let schuss_fertig=false;
         let kettfaedeneinlegen_manuell=true;
@@ -139,8 +141,9 @@
 
         kettfaedeneinlegen();
         document.getElementById('versandb').addEventListener('click',function(){shareCanvas()}, false);
+        document.getElementById('next-level').addEventListener('click',function(){kettfaedeneinlegen()}, false);
         document.getElementById('neustart').addEventListener('click',function(){kettfaedeneinlegen()}, false);
-
+  
          
         function farbwahl(faden){ // aus colorpicker
             const Garnfarbe=document.getElementById('Farbregal'+faden).value;
@@ -149,9 +152,11 @@
         }
        
         async function kettfaedeneinlegen() {
-           document.getElementById('level').innerHTML='<h1>Level '+level+' </h1>';
+           document.getElementById('level-state').innerHTML='<h1>Level '+level+' </h1>';
            schuss_fertig=false;//eigentlich Kettfertig =false
            document.getElementById("versandb").style.visibility="hidden";
+           //message verstecken
+           hideMessage();
            ctx.fillStyle = "rgba(224,223,221,1)"; //label abschneiden
            ctx.fillRect(webstuhl.width-50,webstuhl.height-label,24,label);
            ctx.fillStyle = '#ccc';
@@ -396,6 +401,7 @@
                         document.getElementById('farbwahl').style.display='block';
                         
                     }
+                    showMessage();
                      labelAnheften(); 
                      level++;
                      versand();
@@ -405,5 +411,15 @@
             }
             
                 
+        }
+
+        function showMessage(){
+            message.classList.remove('hide-message');
+            message.classList.add('show-message');
+        }
+
+        function hideMessage(){
+            message.classList.add('hide-message');
+            message.classList.remove('show-message');
         }
  
