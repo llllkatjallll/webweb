@@ -145,7 +145,7 @@
         function farbwahl(faden){ // aus colorpicker
             const Garnfarbe=document.getElementById('Farbregal'+faden).value;
             Garn[faden]=Garnfarbe;
-            //document.getElementById('level').innerHTML='<h1>TEST '+Garnfarbe+' </h1>';
+         //   document.getElementById('level').innerHTML='<h1>TEST '+Garnfarbe+' </h1>';
         }
        
         async function kettfaedeneinlegen() {
