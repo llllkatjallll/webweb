@@ -53,9 +53,11 @@ h1{
 }
 .btn{
 	background-color: #EEE;
-	border-radius: 1rem;
+	border-radius: 2rem;
 	width: 50%;
-	text-transform: uppercase;
+	border:none;
+	/*text-transform: uppercase;*/
+	padding: 10px;
 }
 .btn-info{
 	border-radius: 3px;
