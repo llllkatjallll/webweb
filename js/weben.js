@@ -109,11 +109,8 @@
         let accY=0;
         //screen.orientation.lock("portrait");
         
-//erster Test iOS       
-        if (window.DeviceMotionEvent == undefined ) {
-            alert ("Gyroskop ist nicht verügbar");
-        }
-//function onClick() {  // bei mir (android) richtet der code keine Schaden an. bei ios soll der user vorher aktiv sein. Benötigen wir offenbar 
+
+function freigabe() {  // bei mir (android) richtet der code keine Schaden an. bei ios soll der user vorher aktiv sein. Benötigen wir offenbar 
 // doch einen Startbutton - das kann ich aber nicht testen...
         if (typeof DeviceMotionEvent.requestPermission === 'function') {
             DeviceMotionEvent.requestPermission()
@@ -134,7 +131,7 @@
             accY = event.accelerationIncludingGravity.y;   console.log(accelerationX);
             }
           }
-//}
+}
 
         ctx.fillStyle = '#eee';
         ctx.fillRect(0, 0, webstuhl.width, webstuhl.height-label);
@@ -351,12 +348,11 @@
                         +'      <div id="neueLochkarten">'
                         +'      </div>'
                         +'      <button class="btn btn-secondary mx-auto" id="saveLK" >anwenden</button>'
-                        +'      <button class="btn btn-secondary mx-auto" id="neustartLK" >neu starten</button>'
                         +'</div>';
                                                 
                         erstelleNeueLochkarte();
                         document.getElementById('saveLK').addEventListener('click',function(){speichernLochkarte()}, false);
-                        document.getElementById('neustartLK').addEventListener('click',function(){kettfaedeneinlegen()}, false);
+                        
                 }
                 if (level===3 )  
                 {
