@@ -32,11 +32,17 @@
 </head>
 
 <body id="myBody">
+
+  <button id="home-button" onclick="window.location.href='../index.html'">
+    <img src="../images/logo_transparent.png" width="60" />
+  </button>
   <model-viewer id="helmet"
     src="https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/blendShapes-MATRIX2.glb?v=1650001183443"
     poster=""
-    shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" autoplay camera-controls alt="A 3D model carousel">
-    <button slot="ar-button" id="ar-button">View in your space</button>
+    skybox-image="assets/georgentor_2k.hdr"
+    exposure="0.8"
+    shadow-intensity="0" ar ar-modes="webxr scene-viewer quick-look" autoplay camera-controls alt="A 3D model carousel">
+    <button slot="ar-button" id="ar-button">In AR anschauen</button>
 
     <div id="ar-prompt">
       <img src="../../assets/hand.png" />
@@ -93,7 +99,9 @@
     </div>
 
     <div id="muster-area">
-      <button id="prev-button" class="slider-button">Move Item</button>
+      <button id="prev-button" class="slider-button"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+      </svg></button>
       <div id="slider-container-outer">
         <div id="slider-container" class="slider-container-transition">
           <div class="slider-item"  data-position="1">
@@ -114,7 +122,9 @@
           </div>
         </div>
       </div>
-      <button id="next-button" class="slider-button">Move Item</button>
+      <button id="next-button" class="slider-button"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+      </svg></button>
 
     </div>
   </div>
