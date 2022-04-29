@@ -112,6 +112,8 @@
 
 function freigabe() {  // bei mir (android) richtet der code keine Schaden an. bei ios soll der user vorher aktiv sein. Benötigen wir offenbar 
 // doch einen Startbutton - das kann ich aber nicht testen...
+
+document.getElementById('freigabe').style.setProperty('display', 'none', 'important');
         if (typeof DeviceMotionEvent.requestPermission === 'function') {
             DeviceMotionEvent.requestPermission()
               .then(permissionState => {
@@ -418,4 +420,27 @@ function freigabe() {  // bei mir (android) richtet der code keine Schaden an. b
             message.classList.add('hide-message');
             message.classList.remove('show-message');
         }
+
+        
+
+    /*if (confirm("Um weben zu können, erlaube uns auf den Gyroscop zuzugreifen.")) {
+        freigabe();
+      } else {
+        
+      }
+
+        
+
+          function iOS() {
+            return [
+              'iPad Simulator',
+              'iPhone Simulator',
+              'iPod Simulator',
+              'iPad',
+              'iPhone',
+              'iPod'
+            ].includes(navigator.platform)
+            // iPad on iOS 13 detection
+            || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+          } */
  
