@@ -1,0 +1,229 @@
+/* This keeps child nodes hidden while the element loads */
+:not(:defined) > * {
+    display: none;
+  }
+
+body{
+  margin:0;
+  background-color:#E0DFDD;
+}
+
+  model-viewer {
+    background-color:  #E0DFDD ;
+    --poster-color:  #E0DFDD ;
+    height:70vh;
+    width:100vw;
+  }
+
+#choice-area{
+  position:absolute;
+  height:35vh;
+  width:100vw;
+  top:70vh;
+  display: flex;
+  align-items: stretch;
+  margin: auto;
+}
+
+#model-area{
+  position:absolute;
+  height:10vh;
+  width:100vw;
+  display: flex;
+  align-items: stretch;
+  margin: auto;
+  top: 0;
+}
+
+#muster-area{
+  position:absolute;
+  width:100vw;
+  
+  height:15vh;
+  align-items: stretch;
+  top: 15vh;
+
+}
+
+  #ar-button {
+    background-image: url(../assets/ic_view_in_ar_new_googblue_48dp.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 12px 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 132px;
+    padding: 0px 16px 0px 40px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    color:#4285f4;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 1px solid #DADCE0;
+    z-index:100;
+  }
+
+  #ar-button:active {
+    background-color: #E8EAED;
+  }
+
+  #ar-button:focus {
+    outline: none;
+  }
+
+  #ar-button:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+
+    
+    
+  }
+
+  .slides {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content:space-around; 
+  }
+
+  .slide {
+ 
+    
+    
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    
+    border-radius: 10px;
+    border: none;
+   
+  }
+
+  .slide.selected {
+    border: 2px solid #4285f4;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+#slider-container-outer {
+	overflow: hidden;
+}
+
+#slider-container {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+/* CSS transition applied when translation of items happen */
+.slider-container-transition {
+	transition: transform 0.7s ease-in-out;
+}
+
+.slider-item {
+	width: 100%;
+    height: 15vh;
+	flex-shrink: 0;
+}
+
+.stoff{
+    position: relative;
+	width: 100%;
+    height: 13vh;
+	flex-shrink: 0;
+}
+.slider-item p{
+    text-align: center;
+font-size: 1em;
+margin: 0;
+position: relative;
+
+z-index: 500;
+
+}
+.slider-button{
+    position:absolute;
+    bottom: 3.5vh;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+   border-style: solid;
+    background-color: black;
+    z-index: 400;
+    border-color: #cccccc;
+    border-width: 3px;
+}
+
+#prev-button{
+    left:20px;
+}
+
+#next-button{
+    right:20px;
+}
+
+#stoff-1{
+    background-image: url("https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/chrome_nt3MYxvJkj.png?v=1650476783240");
+    background-color: #cccccc;
+}
+
+#stoff-2{
+    background-image: url("https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_sIoVLj0Gj6.png?v=1650001302794");
+    background-color: #cccccc;
+}
+
+#stoff-3{
+    background-image: url("https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_DnGtv40wih.png?v=1650002235111");
+    background-color: #cccccc;
+}
+
+#stoff-4{
+    background-image: url("https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_E4TCNEIKCC.png?v=1650002237372");
+    background-color: #cccccc;
+}
+
