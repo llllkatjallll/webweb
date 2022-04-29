@@ -335,10 +335,16 @@ document.getElementById('freigabe').style.setProperty('display', 'none', 'import
                 return new Promise(resolve => setTimeout(resolve, milliseconds));
         }
         function fertig(aktion){
-            //window.navigator.vibrate(200);
+            window.navigator.vibrate(200);
             
             if (aktion==='Schussfaden')
             {
+                if (level===5  )  
+                {
+                        document.getElementById('info').style.display = "none";
+                        document.getElementById('level').innerHTML='<h1>Glückwunsch</h1><p>Meister der Webmuster!</p>';
+                        //wird später nicht mehr überschrieben
+                }
                if (level===4  )  
                 {
                         document.getElementById('info').style.display = "none";
@@ -349,7 +355,7 @@ document.getElementById('freigabe').style.setProperty('display', 'none', 'import
                         +'    <div id="lochkarten">'
                         +'      <div id="neueLochkarten">'
                         +'      </div>'
-                        +'      <button class="btn btn-secondary mx-auto" id="saveLK" >anwenden</button>'
+                        +'      <button class="btn btn-light mx-auto" id="saveLK" >anwenden</button>'
                         +'</div>';
                                                 
                         erstelleNeueLochkarte();
