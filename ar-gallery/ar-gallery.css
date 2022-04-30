@@ -11,15 +11,15 @@ body{
   model-viewer {
     background-color:  #E0DFDD ;
     --poster-color:  #E0DFDD ;
-    height:70vh;
+    height:80vh;
     width:100vw;
   }
 
 #choice-area{
   position:absolute;
-  height:35vh;
+  height:20vh;
   width:100vw;
-  top:70vh;
+  top:80vh;
   display: flex;
   align-items: stretch;
   margin: auto;
@@ -32,21 +32,22 @@ body{
   display: flex;
   align-items: stretch;
   margin: auto;
-  top: 0;
+  bottom: 0;
+  margin-bottom: 30px;
 }
 
 #muster-area{
   position:absolute;
   width:100vw;
   
-  height:15vh;
+  height:20vh;
   align-items: stretch;
-  top: 15vh;
+  top: 0vh;
 
 }
 
   #ar-button {
-    background-image: url(../assets/ic_view_in_ar_new_googblue_48dp.png);
+  
     background-repeat: no-repeat;
     background-size: 20px 20px;
     background-position: 12px 50%;
@@ -167,36 +168,40 @@ body{
 
 .slider-item {
 	width: 100%;
-    height: 15vh;
+    height: 20vh;
 	flex-shrink: 0;
 }
 
 .stoff{
     position: relative;
 	width: 100%;
-    height: 13vh;
+  height: 13vh;
 	flex-shrink: 0;
 }
 .slider-item p{
     text-align: center;
-font-size: 1em;
+font-size: 1.3em;
 margin: 0;
 position: relative;
-
+font-family: 'Space Mono', monospace; 
+height: 68px;
+line-height: 68px;
 z-index: 500;
 
 }
 .slider-button{
     position:absolute;
-    top: -32px;
+    top: 0px;
     width: 50px;
     height: 50px;
     border-radius: 0px;
    border-style: solid;
-    background-color: #0E1D56;
+    background-color: #E0DFDD;
     z-index: 400;
     border-color: #cccccc;
     border-width: 0px;
+    z-index: 600;
+    margin-top: 10px;
 }
 
 #prev-button{
@@ -208,23 +213,27 @@ z-index: 500;
 }
 
 #stoff-1{
-    background-image: url("https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/chrome_nt3MYxvJkj.png?v=1650476783240");
+    background-image: url("assets/gewebemuster-21512.png");
     background-color: #cccccc;
+    background-size: cover;
 }
 
 #stoff-2{
-    background-image: url("https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_sIoVLj0Gj6.png?v=1650001302794");
+    background-image: url("assets/gewebemuster-4283-30328-2.jpg");
     background-color: #cccccc;
+    background-size: cover;
 }
 
 #stoff-3{
-    background-image: url("https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_DnGtv40wih.png?v=1650002235111");
+    background-image: url("assets/gewebemuster2763.png");
     background-color: #cccccc;
+    background-size: cover;
 }
 
 #stoff-4{
-    background-image: url("https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_E4TCNEIKCC.png?v=1650002237372");
+    background-image: url("assets/Damastgewebe.png");
     background-color: #cccccc;
+    background-size: cover;
 }
 
 #home-button{
