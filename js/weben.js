@@ -203,13 +203,14 @@ document.getElementById('freigabe').style.setProperty('display', 'none', 'import
                        ctx.fillStyle = farbe;
                        ctx.fillRect(x,webstuhl.height-schuss,zelleh,zelleh-1);
                     }
+                    
             }
             schuss_fertig=true;
             }
         }
         async function schuss_rechts(farbe){
-            console.log(schuss_fertig);
-            if (schuss_fertig && schuss>(webstuhl.height-20) ) {schuss_fertig=false; fertig('Schussfaden'); labelAnheften(); versand(); }
+            
+            if (schuss_fertig && schuss>(webstuhl.height-30) ) {schuss_fertig=false; fertig('Schussfaden'); labelAnheften(); versand(); }
             
             if (schuss_fertig && ((schuss/10) % 2===1)){
                 schuss_fertig=false;
@@ -298,7 +299,10 @@ document.getElementById('freigabe').style.setProperty('display', 'none', 'import
             neueLochkarte.innerHTML=ausgabe;
             for(let i=0;i<24;i++){
                 document.getElementById("lkl"+i).addEventListener('click',function(){
-                    this.style.backgroundColor="#fff";
+                    if (this.style.backgroundColor==="rgb(255, 255, 255)")
+                        this.style.backgroundColor="#999";
+                    else
+                        this.style.backgroundColor="#fff";
                 });
             }
         }
