@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ar-gallery.css" />
 
   <!-- The following libraries and polyfills are recommended to maximize browser support -->
@@ -44,9 +44,7 @@
     shadow-intensity="0" ar ar-modes="webxr scene-viewer quick-look" autoplay camera-controls alt="A 3D model carousel">
     <button slot="ar-button" id="ar-button">In AR anschauen</button>
 
-    <div id="ar-prompt">
-      <img src="../../assets/hand.png" />
-    </div>
+   
 
 
 
@@ -54,28 +52,26 @@
       <p>Diffuse</p>
       <select id="diffuse">
         <option
-          value="https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/chrome_nt3MYxvJkj.png?v=1650476783240">
-          Muster 4
-        </option>
-        <option
-          value="https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_sIoVLj0Gj6.png?v=1650001302794">
+          value="assets/gewebemuster-4283-30328-2.jpg">
           Muster 1
         </option>
         <option
-          value="https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_DnGtv40wih.png?v=1650002235111">
+        value="assets/gewebemuster2763.png">
+
           Muster 2
         </option>
+        <!--zweite stelle-->
         <option
-          value="https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_E4TCNEIKCC.png?v=1650002237372">
-          Muster 3
+        value="assets/gewebemuster-21512.png">          
+        Muster 3
+        </option>
+        <option
+        value="assets/Damastgewebe.png";>
+          Muster 4
         </option>
       </select>
     </div>
-    
-  </model-viewer>
 
-  
-  <div id="choice-area">
     <div id="model-area">
       <div class="slider">
         <div class="slides">
@@ -90,13 +86,19 @@
             style="
             background-image: url('assets/faeden.png');
           "></button><button class="slide"
-            onclick="switchSrc(this, 'https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/faden.glb?v=1650476103969')"
+            onclick="switchSrc(this, 'assets/grid_rect.glb')"
             style="
             background-image: url('https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_WVAGz6GUFQ.png?v=1650476840484');
           "></button>
         </div>
       </div>
     </div>
+    
+  </model-viewer>
+
+  
+  <div id="choice-area">
+    
 
     <div id="muster-area">
       <button id="prev-button" class="slider-button"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -105,19 +107,19 @@
       <div id="slider-container-outer">
         <div id="slider-container" class="slider-container-transition">
           <div class="slider-item"  data-position="1">
-            <p>Stoff 1</p>
+            <p>Gewebemuster 21512</p>
             <div class="stoff" id="stoff-1"> </div>
           </div>
           <div class="slider-item"  data-position="2">
-            <p>Stoff 2</p>
+            <p>Gewebemuster 4283</p>
             <div class="stoff" id="stoff-2"> </div>
           </div>
-          <div class="slider-item"  data-position="3">
-            <p>Stoff 3</p>
+         <div class="slider-item"  data-position="3">
+            <p>Gewebemuster 2763</p>
             <div class="stoff" id="stoff-3"> </div>
           </div>
-          <div class="slider-item"  data-position="4">
-            <p>Stoff 4</p>
+           <div class="slider-item"  data-position="4">
+            <p>Damastgewebe</p>
             <div class="stoff" id="stoff-4"> </div>
           </div>
         </div>
@@ -187,6 +189,7 @@
 	
 	// position of current item in view
 	current: 1,
+  positive:0,
 
 	init: function() {
 		// set CSS order of each item initially
@@ -244,19 +247,39 @@
 	},
 
 	gotoNext: function() {
+    this.positive=1;
 		// translate from 0 to -100% 
 		// we need transitionend to fire for this translation, so add transition CSS
 		document.querySelector("#slider-container").classList.add('slider-container-transition');
 		document.querySelector("#slider-container").style.transform = 'translateX(-100%)';
-    document.getElementById("diffuse").value = "https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_sIoVLj0Gj6.png?v=1650001302794";
-    document.getElementById("diffuse").dispatchEvent(new Event('change'));
+
+    if(this.current==1){
+     document.getElementById("diffuse").value = "assets/gewebemuster-4283-30328-2.jpg";
+   } else if (this.current==2){
+    document.getElementById("diffuse").value = "assets/gewebemuster2763.png";
+   } else if (this.current==3){
+    document.getElementById("diffuse").value = "assets/Damastgewebe.png";
+   } else if (this.current==4){
+    document.getElementById("diffuse").value = "assets/gewebemuster-21512.png";
+   }
+    
+      document.getElementById("diffuse").dispatchEvent(new Event('change'));
 	},
   gotoPrev: function() {
+    this.positive=0;
 		// translate from 0 to -100% 
 		// we need transitionend to fire for this translation, so add transition CSS
 		document.querySelector("#slider-container").classList.add('slider-container-transition');
 		document.querySelector("#slider-container").style.transform = 'translateX(100%)';
-    document.getElementById("diffuse").value = "https://cdn.glitch.global/7f23b25d-d6a8-4279-8f05-fee71c7925f8/ApplicationFrameHost_DnGtv40wih.png?v=1650002235111";
+    if(this.current==1){
+     document.getElementById("diffuse").value = "assets/gewebemuster-4283-30328-2.jpg";
+   } else if (this.current==2){
+    document.getElementById("diffuse").value = "assets/gewebemuster2763.png";
+   } else if (this.current==3){
+    document.getElementById("diffuse").value = "assets/Damastgewebe.png";
+   } else if (this.current==4){
+    document.getElementById("diffuse").value = "assets/gewebemuster-21512.png";
+   }
     document.getElementById("diffuse").dispatchEvent(new Event('change'));
 	},
   selectElement: function(id, valueToSelect){
