@@ -191,7 +191,7 @@ document.getElementById('freigabe').style.setProperty('display', 'none', 'import
             return lochkarte;
         }
         async function schuss_links(farbe){
-            
+            if (schuss_fertig && schuss>(webstuhl.height-30) ) {schuss_fertig=false; fertig('Schussfaden'); labelAnheften(); versand(); }
             if (schuss_fertig && (((schuss/10) % 2===0) )){
                 schuss_fertig=false;
                 lochkarte=zieheLochkarte();
@@ -203,15 +203,11 @@ document.getElementById('freigabe').style.setProperty('display', 'none', 'import
                        ctx.fillStyle = farbe;
                        ctx.fillRect(x,webstuhl.height-schuss,zelleh,zelleh-1);
                     }
-                    
             }
             schuss_fertig=true;
             }
         }
         async function schuss_rechts(farbe){
-            
-            if (schuss_fertig && schuss>(webstuhl.height-30) ) {schuss_fertig=false; fertig('Schussfaden'); labelAnheften(); versand(); }
-            
             if (schuss_fertig && ((schuss/10) % 2===1)){
                 schuss_fertig=false;
                 lochkarte=zieheLochkarte();
